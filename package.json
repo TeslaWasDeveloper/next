@@ -33,8 +33,12 @@
     "test:coverage": "jest --coverage"
   },
   "lint-staged": {
-    "*.{js,mjs,jsx,ts,tsx,css,scss,json,yml,md,mdx,graphql}": [
-      "yarn format"
+    "*.{js,mjs,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,scss,json,yml,md,mdx,graphql}": [
+      "prettier --write"
     ]
   },
   "dependencies": {
