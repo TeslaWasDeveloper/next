@@ -27,7 +27,7 @@
     "format": "prettier --write .",
     "postinstall": "husky",
     "prepare": "husky",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:verbose": "jest --verbose",
     "test:coverage": "jest --coverage"
