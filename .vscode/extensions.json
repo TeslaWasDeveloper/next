@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "JunHan.auto-close-tag", // Auto Close Tag
+    "JunHan.auto-rename-tag", // Auto Rename Tag
+    "ms-vscode.docker", // Docker
+    "EditorConfig.EditorConfig", // EditorConfig for VS Code
+    "dbaeumer.vscode-eslint", // ESLint
+    "GitHub.copilot-chat", // GitHub Copilot Chat
+    "KissTamas.image-preview", // Image Preview
+    "ms-vscode.live-server", // Live Preview
+    "DavidAnson.vscode-markdownlint", // markdownlint
+    "yzhang.markdown-all-in-one", // Markdown Preview Enhanced
+    "PhilippKief.material-icon-theme", // Material Icon Theme
+    "christian-kohler.npm-intellisense", // npm Intellisense
+    "esbenp.prettier-vscode", // Prettier - Code formatter
+    "mechatroner.rainbow-csv", // Rainbow CSV
+    "TailwindLabs.tailwindcss-intellisense", // Tailwind CSS IntelliSense
+    "JoshJohnson.xml", // XML Tools
+    "Anbuselvan.rocky-bootstrap-5-quick-snippets", // Bootstrap 5 Quick Snippets
+    "vincaslt.highlight-matching-tag", // Highlight Matching Tag
+    "marcon.rem-to-px" // px to rem converter
+  ]
+}

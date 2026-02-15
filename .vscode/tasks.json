@@ -1,0 +1,72 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dev",
+      "type": "shell",
+      "command": "yarn dev",
+      "group": "build",
+      "isBackground": true
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "yarn build",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "start",
+      "type": "shell",
+      "command": "yarn start"
+    },
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "yarn lint",
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "clean",
+      "type": "shell",
+      "command": "yarn clean"
+    },
+    {
+      "label": "format",
+      "type": "shell",
+      "command": "yarn format"
+    },
+    {
+      "label": "postinstall",
+      "type": "shell",
+      "command": "yarn postinstall"
+    },
+    {
+      "label": "prepare",
+      "type": "shell",
+      "command": "yarn prepare"
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "yarn test"
+    },
+    {
+      "label": "test:watch",
+      "type": "shell",
+      "command": "yarn test:watch"
+    },
+    {
+      "label": "test:verbose",
+      "type": "shell",
+      "command": "yarn test:verbose"
+    },
+    {
+      "label": "test:coverage",
+      "type": "shell",
+      "command": "yarn test:coverage"
+    }
+  ]
+}
