@@ -4,15 +4,29 @@ import Link from "next/link"
 
 import { PlusIcon } from "lucide-react"
 
-import { GitHub } from "@/components/GitHub"
+import Logo from "@/components/content/Logo"
 import { LayoutToggle } from "@/components/LayoutToggle"
-import Logo from "@/components/Logo"
 import { ModeToggle } from "@/components/ModeToggle"
 import { Navigation } from "@/components/Navigation"
 import { SearchButton } from "@/components/SearchButton"
+import { SocialButton } from "@/components/SocialButton"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { useLayoutStore } from "@/store/layoutStore"
+
+const socialLinks = [
+  { href: "https://github.com", label: "GitHub" },
+  { href: "https://facebook.com", label: "Facebook" },
+  { href: "https://instagram.com", label: "Instagram" },
+  { href: "https://twitter.com", label: "Twitter" },
+  { href: "https://youtube.com/user", label: "YouTube" },
+  { href: "https://linkedin.com/user", label: "LinkedIn" },
+  { href: "https://discord.com/user", label: "Discord" },
+  { href: "https://threads.com/user", label: "Threads" },
+  { href: "https://tiktok.com/user", label: "TikTok" },
+  { href: "https://messenger.com/user", label: "Messenger" },
+  { href: "https://whatsapp.com/user", label: "WhatsApp" },
+]
 
 export function Header({
   className,
@@ -37,7 +51,9 @@ export function Header({
           </div>
           <div className="flex items-center justify-end gap-2">
             <SearchButton size="sm" />
-            <GitHub />
+            {socialLinks.map((link) => (
+              <SocialButton key={link.href} href={link.href} />
+            ))}
             <LayoutToggle />
             <ModeToggle />
             <Button size="sm" className="cursor-pointer">

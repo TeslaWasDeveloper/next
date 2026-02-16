@@ -1,3 +1,4 @@
+import { Container } from "@/components/Container"
 import { Section } from "@/components/Section"
 import {
   Accordion,
@@ -30,18 +31,20 @@ const items = [
 export function Faq() {
   return (
     <Section>
-      <Accordion
-        type="multiple"
-        className="max-w-lg"
-        defaultValue={["notifications"]}
-      >
-        {items.map((item) => (
-          <AccordionItem key={item.value} value={item.value}>
-            <AccordionTrigger>{item.trigger}</AccordionTrigger>
-            <AccordionContent>{item.content}</AccordionContent>
-          </AccordionItem>
-        ))}
-      </Accordion>
+      <Container>
+        <Accordion
+          type="multiple"
+          className="max-w-lg"
+          defaultValue={["notifications"]}
+        >
+          {items.map((item) => (
+            <AccordionItem key={item.value} value={item.value}>
+              <AccordionTrigger>{item.trigger}</AccordionTrigger>
+              <AccordionContent>{item.content}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Container>
     </Section>
   )
 }

@@ -1,32 +1,24 @@
 import Link from "next/link"
 
+import { Container } from "@/components/Container"
 import { cn } from "@/lib/utils"
 import { siteConfig } from "@/site.config"
 
-interface FooterLink {
-  text: string
-  href: string
-}
+const copyright = `© ${new Date().getFullYear()} ${siteConfig.author.name}. All rights reserved.`
 
-interface FooterProps {
-  name?: string
-  copyright?: string
-  policies?: FooterLink[]
-  className?: string
-}
+const policies: { text: string; href: string }[] = [
+  { text: "Privacy Policy", href: "/privacy" },
+  { text: "Terms of Service", href: "/terms" },
+]
 
 export function Footer({
-  copyright = `© ${new Date().getFullYear()} ${siteConfig.author.name}. All rights reserved.`,
-  policies = [
-    { text: "Privacy Policy", href: "/privacy" },
-    { text: "Terms of Service", href: "/terms" },
-  ],
   className,
-}: FooterProps) {
+  ...props
+}: React.ComponentProps<"footer">) {
   return (
-    <footer className={cn("w-full px-6", className)}>
-      <div className="container mx-auto border-t px-6">
-        <div className="text-muted-foreground flex flex-col items-center justify-between gap-4 py-4 text-xs sm:flex-row">
+    <footer className={cn("w-full px-6", className)} {...props}>
+      <Container className="border-t">
+        <div className="text-muted-foreground flex w-full flex-col items-center justify-between gap-4 py-4 text-xs sm:flex-row">
           <p>{copyright}</p>
           <div className="flex items-center gap-3">
             {policies.map((policy, index) => (
@@ -43,7 +35,7 @@ export function Footer({
             </button>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }

@@ -1,23 +1,61 @@
-import { BadgeCheck } from "lucide-react"
+import type { Metadata } from "next"
 
 import { Faq } from "@/components/Faq"
-import { Badge } from "@/components/ui/badge"
+import { Hero } from "@/components/Hero"
+import { siteConfig } from "@/site.config"
 
-export default function FrontPage() {
+export const generateMetadata = (): Metadata => ({
+  title: `${siteConfig.name} | Home`,
+  description: siteConfig.description,
+  keywords: [
+    "Landing page template",
+    "Components",
+    "Shadcn",
+    "Next.js",
+    "React",
+    "Tailwind CSS",
+    "Radix UI",
+  ],
+  authors: [
+    {
+      name: "Mikolaj Dobrucki",
+      url: "https://mikolajdobrucki.com",
+    },
+  ],
+  creator: "mikolajdobrucki",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteConfig.getStartedUrl,
+    title: `Home - ${siteConfig.name}`,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Home`,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@mikolajdobrucki",
+  },
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+})
+
+export default function Homepage() {
   return (
-    <>
-      <section className="fade-bottom px-6 py-12 sm:py-24 md:py-32">
-        <div className="container mx-auto flex flex-col items-center gap-6 sm:gap-20">
-          <Badge variant="outline">
-            {" "}
-            <BadgeCheck data-icon="inline-start" /> Badge lorem ipsum sit dolor
-          </Badge>
-          <h1 className="max-w-[560px] text-center text-4xl leading-tight font-semibold sm:text-6xl sm:leading-tight md:text-8xl">
-            Hero
-          </h1>
-        </div>
-      </section>
-
+    <div>
+      <Hero />
       <section className="border-y px-6 py-12 sm:py-24 md:py-32">
         <div className="container mx-auto flex flex-col items-center gap-6 sm:gap-20">
           <div className="flex flex-col items-center gap-4 px-4 text-center sm:gap-8">
@@ -45,6 +83,6 @@ export default function FrontPage() {
       </section>
 
       <Faq />
-    </>
+    </div>
   )
 }

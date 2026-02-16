@@ -1,6 +1,6 @@
 "use client"
-
 import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 
 import {
   CalculatorIcon,
@@ -9,7 +9,6 @@ import {
   CodeIcon,
   CopyIcon,
   FileTextIcon,
-  FolderIcon,
   FolderPlusIcon,
   HomeIcon,
   ImageIcon,
@@ -39,6 +38,7 @@ import { useCommandStore } from "@/store/commandStore"
 export function SearchCommand() {
   const open = useCommandStore((state) => state.open)
   const setOpen = useCommandStore((state) => state.setOpen)
+  const router = useRouter()
 
   // Open command menu with "/" key
   useEffect(() => {
@@ -61,7 +61,12 @@ export function SearchCommand() {
           <CommandList>
             <CommandEmpty>No results found.</CommandEmpty>
             <CommandGroup heading="Navigation">
-              <CommandItem>
+              <CommandItem
+                onSelect={() => {
+                  router.push("/")
+                  setOpen(false)
+                }}
+              >
                 <HomeIcon />
                 <span>Home</span>
                 <CommandShortcut>⌘H</CommandShortcut>
@@ -71,13 +76,23 @@ export function SearchCommand() {
                 <span>Inbox</span>
                 <CommandShortcut>⌘I</CommandShortcut>
               </CommandItem>
-              <CommandItem>
+              <CommandItem
+                onSelect={() => {
+                  router.push("/privacy")
+                  setOpen(false)
+                }}
+              >
                 <FileTextIcon />
-                <span>Documents</span>
+                <span>Privacy Policy</span>
                 <CommandShortcut>⌘D</CommandShortcut>
               </CommandItem>
-              <CommandItem>
-                <FolderIcon />
+              <CommandItem
+                onSelect={() => {
+                  router.push("/terms")
+                  setOpen(false)
+                }}
+              >
+                <FileTextIcon />
                 <span>Folders</span>
                 <CommandShortcut>⌘F</CommandShortcut>
               </CommandItem>
@@ -137,10 +152,15 @@ export function SearchCommand() {
               </CommandItem>
             </CommandGroup>
             <CommandSeparator />
-            <CommandGroup heading="Tools">
-              <CommandItem>
+            <CommandGroup heading="Social Media">
+              <CommandItem
+                onSelect={() => {
+                  window.open("https://github.com", "_blank")
+                  setOpen(false)
+                }}
+              >
                 <CalculatorIcon />
-                <span>Calculator</span>
+                <span>GitHub</span>
               </CommandItem>
               <CommandItem>
                 <CalendarIcon />
