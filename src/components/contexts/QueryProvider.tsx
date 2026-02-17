@@ -1,21 +1,28 @@
 "use client"
 
-import { ReactNode } from "react"
+import { ReactNode, useEffect, useState } from "react"
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
 const queryClient = new QueryClient()
 
-interface Props {
-  children: ReactNode
-}
+export default function QueryProvider({ children }: { children: ReactNode }) {
+  const [DevTools, setDevTools] = useState<React.ComponentType<{
+    initialIsOpen?: boolean
+  }> | null>(null)
 
-export default function QueryProvider({ children }: Props) {
+  useEffect(() => {
+    if (process.env.NODE_ENV === "development") {
+      import("@tanstack/react-query-devtools").then((mod) => {
+        setDevTools(() => mod.ReactQueryDevtools)
+      })
+    }
+  }, [])
+
   return (
     <QueryClientProvider client={queryClient}>
       {children}
-      <ReactQueryDevtools initialIsOpen={false} />
+      {DevTools && <DevTools initialIsOpen={false} />}
     </QueryClientProvider>
   )
 }

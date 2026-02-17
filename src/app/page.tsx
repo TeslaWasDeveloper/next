@@ -1,56 +1,5 @@
-import type { Metadata } from "next"
-
 import { Faq } from "@/components/Faq"
 import { Hero } from "@/components/Hero"
-import { siteConfig } from "@/site.config"
-
-export const generateMetadata = (): Metadata => ({
-  title: `${siteConfig.name} | Home`,
-  description: siteConfig.description,
-  keywords: [
-    "Landing page template",
-    "Components",
-    "Shadcn",
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Radix UI",
-  ],
-  authors: [
-    {
-      name: "Mikolaj Dobrucki",
-      url: "https://mikolajdobrucki.com",
-    },
-  ],
-  creator: "mikolajdobrucki",
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.getStartedUrl,
-    title: `Home - ${siteConfig.name}`,
-    description: siteConfig.description,
-    siteName: siteConfig.name,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: siteConfig.name,
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${siteConfig.name} | Home`,
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
-    creator: "@mikolajdobrucki",
-  },
-  icons: {
-    icon: "/favicon.svg",
-    apple: "/apple-touch-icon.png",
-  },
-})
 
 export default function Homepage() {
   return (

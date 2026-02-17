@@ -23,7 +23,13 @@ export function useTableOfContents() {
       if (!el.id) {
         el.id = el
           .textContent!.toLowerCase()
+          // Normalize accented characters (e.g. "ě" -> "e")
+          .normalize("NFD")
+          // Remove diacritic marks created by normalization
+          .replace(/[\u0300-\u036f]/g, "")
+          // Replace spaces with dashes
           .replace(/\s+/g, "-")
+          // Remove all non-word characters except dashes
           .replace(/[^\w-]+/g, "")
       }
 

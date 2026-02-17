@@ -13,19 +13,19 @@ export function TableOfContents({
 
   return (
     <aside
-      className={cn("fixed top-24 right-0 w-64 space-y-2 text-sm", className)}
+      className={cn("fixed top-24 right-0 w-64 space-y-4", className)}
       {...props}
     >
-      <p className="text-muted-foreground font-semibold">On This Page</p>
+      <p className="text-muted-foreground text-xs font-medium">On This Page</p>
 
-      <nav className="space-y-1">
+      <nav className="space-y-2">
         {headings.map((heading) => (
           <a
             key={heading.id}
             href={`#${heading.id}`}
             className={cn(
-              "hover:text-foreground block transition-colors",
-              heading.level === 3 && "text-muted-foreground ml-4",
+              "hover:text-foreground text-muted-foreground block text-xs transition-colors",
+              heading.level === 3 && "pl-4",
             )}
           >
             {heading.text}

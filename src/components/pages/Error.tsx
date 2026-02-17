@@ -1,4 +1,6 @@
-import { ArrowUpRightIcon } from "lucide-react"
+import Link from "next/link"
+
+import { TriangleAlertIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -15,29 +17,22 @@ export function ErrorPageContent({ reset }: { reset: () => void }) {
     <Empty>
       <EmptyHeader>
         <EmptyMedia variant="icon">
-          <ArrowUpRightIcon />
+          <TriangleAlertIcon />
         </EmptyMedia>
-        <EmptyTitle>No Projects Yet</EmptyTitle>
+        <EmptyTitle>Oops! Something went wrong</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          There was an unexpected error while loading this page. You can try to
+          reload or go back to safety.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className="flex-row justify-center gap-2">
-        <Button>Create Project</Button>
-        <Button variant="outline">Import Project</Button>
+        <Button className="cursor-pointer" onClick={reset}>
+          Retry
+        </Button>
+        <Button variant="outline" asChild>
+          <Link href="/">Go Home</Link>
+        </Button>
       </EmptyContent>
-      <Button
-        variant="link"
-        asChild
-        className="text-muted-foreground"
-        size="sm"
-        onClick={reset}
-      >
-        <a href="#">
-          Learn More <ArrowUpRightIcon />
-        </a>
-      </Button>
     </Empty>
   )
 }

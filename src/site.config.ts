@@ -1,16 +1,29 @@
 export const siteConfig = {
   name: "Next",
-  url: "localhost:3000",
-  getStartedUrl: "localhost:3000/docs/getting-started/introduction",
-  ogImage: "localhost:3000/og.jpg",
+  url: "http://localhost:3000",
+  ogImage: "/og.jpg",
   description:
     "Landing page components built with React, Shadcn/ui and Tailwind that will make your website feel premium.",
   author: {
-    name: "Rucilos",
+    name: "Nikola Tesla",
+    url: "https://example.com",
+    nickname: "nikolatesla",
   },
   links: {
-    github: "https://github.com/launch-ui/launch-ui",
-    email: "mailto:contact@mikolajdobrucki.com",
+    email: "mailto:contact@nikolatesla.com",
+    social: [
+      "https://github.com/user/repo",
+      "https://facebook.com",
+      "https://instagram.com",
+      "https://twitter.com",
+      "https://youtube.com/user",
+      "https://linkedin.com/user",
+      "https://discord.com/user",
+      "https://threads.com/user",
+      "https://tiktok.com/user",
+      "https://messenger.com/user",
+      "https://whatsapp.com/user",
+    ],
   },
 }
 

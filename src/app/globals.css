@@ -169,6 +169,12 @@
   --cc-font-family: Inter, sans-serif;
   --cc-secondary-color: var(--muted-foreground);
 
+  /* Backgrounds */
+  --cc-bg: var(--card);
+
+  /* Separator */
+  --cc-separator-border-color: var(--border);
+
   /* Buttons */
   --cc-btn-border-radius: calc(var(--radius) - 2px);
 
@@ -177,13 +183,13 @@
   --cc-btn-primary-border-color: var(--primary);
   --cc-btn-primary-hover-bg: color-mix(
     in oklch,
-    var(--primary) 80%,
-    transparent 20%
+    var(--primary) 85%,
+    transparent 15%
   );
   --cc-btn-primary-hover-border-color: color-mix(
     in oklch,
-    var(--primary) 80%,
-    transparent 20%
+    var(--primary) 85%,
+    transparent 15%
   );
   --cc-btn-primary-color: var(--primary-foreground);
 
@@ -192,35 +198,49 @@
   --cc-btn-secondary-border-color: var(--secondary);
   --cc-btn-secondary-hover-bg: color-mix(
     in oklch,
-    var(--secondary) 80%,
-    transparent 20%
+    var(--secondary) 95%,
+    black 5%
   );
   --cc-btn-secondary-hover-border-color: color-mix(
     in oklch,
-    var(--secondary) 80%,
-    transparent 20%
+    var(--secondary) 95%,
+    black 5%
   );
   --cc-btn-secondary-color: var(--secondary-foreground);
 
-  /* Modal Categories */
+  /* Block Background */
   --cc-cookie-category-block-bg: var(--secondary);
   --cc-cookie-category-block-hover-bg: color-mix(
     in oklch,
-    var(--secondary) 50%,
-    transparent 50%
+    var(--secondary) 95%,
+    black 5%
   );
+
+  /* Block Border */
   --cc-cookie-category-block-border: var(--secondary);
+  --cc-cookie-category-block-hover-border: var(--secondary);
+  --cc-cookie-category-expanded-block-hover-bg: var(--secondary);
 
-  --cc-section-category-border: var(--border);
-  --cc-toggle-readonly-bg: var(--background);
-  --cc-cookie-category-expanded-block-hover-bg: var(--border);
+  /* Toggle On */
+  --cc-toggle-on-bg: var(--primary);
+  --cc-toggle-on-knob-bg: var(--background);
+  --cc-toggle-on-knob-icon-color: var(--primary);
 
-  /* Toggle */
-  --cc-toggle-on-bg: var(--cc-btn-primary-bg);
+  /* Toggle Off */
+  --cc-toggle-off-bg: var(--primary);
+  --cc-toggle-off-knob-bg: var(--background);
+  --cc-toggle-off-knob-icon-color: var(--primary);
 
-  /* Background banner and modal */
-  --cc-bg: var(--card);
+  /* Toggle Always On */
+  --cc-toggle-readonly-knob-bg: var(--background);
+  --cc-toggle-readonly-knob-icon-color: var(--primary);
 
-  /* Separator */
-  --cc-separator-border-color: var(--border);
+  /* Accordion Arrow */
+  --cc-toggle-readonly-bg: transparent;
+}
+
+/* Cookie Consent Toggle Always On */
+#cc-main .section__toggle:checked:disabled ~ .toggle__icon {
+  background: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary);
 }

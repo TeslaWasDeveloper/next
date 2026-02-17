@@ -33,7 +33,7 @@ const SOCIAL_MAP: Record<string, SocialConfig> = {
   "messenger.com": { icon: <SiMessenger />, label: "Messenger" },
   "threads.com": { icon: <SiThreads />, label: "Threads" },
   "tiktok.com": { icon: <SiTiktok />, label: "TikTok" },
-  "twitter.com": { icon: <SiX />, label: "Twitter / X" },
+  "twitter.com": { icon: <SiX />, label: "X" },
   "whatsapp.com": { icon: <SiWhatsapp />, label: "WhatsApp" },
   "youtube.com": { icon: <SiYoutube />, label: "YouTube" },
 }
