@@ -21,7 +21,7 @@ import "@/app/globals.css"
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
+    template: `${siteConfig.name} | %s`,
   },
   metadataBase: new URL(siteConfig.getStartedUrl),
   description: siteConfig.description,
@@ -104,7 +104,9 @@ export default function RootLayout({
               <SearchCommand />
               <CookieConsentInit />
               <SelfXSSWarning />
-              <ReactQueryDevtools initialIsOpen={false} />
+              {process.env.NODE_ENV === "development" && (
+                <ReactQueryDevtools initialIsOpen={false} />
+              )}
             </TooltipProvider>
           </QueryProvider>
         </ThemeProvider>

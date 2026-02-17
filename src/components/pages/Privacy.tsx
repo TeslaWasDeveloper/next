@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container"
 import { Section } from "@/components/Section"
+import { TableOfContents } from "@/components/TableOfContents"
 import { Blockquote } from "@/components/typography/Blockquote"
 import { Code } from "@/components/typography/Code"
 import { H1 } from "@/components/typography/H1"
@@ -47,6 +48,7 @@ export function PrivacyPageContent() {
             <ListItem>2nd level of jokes: 10 gold coins</ListItem>
             <ListItem>3rd level of one-liners: 20 gold coins</ListItem>
           </List>
+          <TableOfContents />
         </div>
       </Container>
     </Section>

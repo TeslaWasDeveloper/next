@@ -8,7 +8,11 @@ export function MainLayout({
   ...props
 }: React.ComponentProps<"main">) {
   return (
-    <main className={cn("flex flex-1 flex-col", className)} {...props}>
+    <main
+      id="main-content"
+      className={cn("flex flex-1 flex-col", className)}
+      {...props}
+    >
       {children}
     </main>
   )
